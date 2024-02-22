@@ -47,7 +47,7 @@ export class TenantOptionManagementService {
     return option;
   }
 
-  private async addOptionToConfiguration(option: ITenantOption & { encrypted: string }) {
+  async addOptionToConfiguration(option: ITenantOption & { encrypted: string }) {
     const config = await this.getConfiguration();
     if (config.options.find((o) => o.category === option.category && o.key === option.key)) {
       return Promise.reject('Tenant option already exists!');

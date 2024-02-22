@@ -11,12 +11,16 @@ import { JsonEditorComponent } from './editor/jsoneditor.component';
 import { TemplateComponent } from './template/template.component';
 import { PanelWrapperComponent } from './template/panel-wrapper.component';
 import { ImportOptionModalComponent } from './import-option/import-option-modal.component';
+import { ExportModalComponent } from './export-modal/export-modal.component';
+import { FileImportModalComponent } from './file-import-modal/file-import-modal.component';
 
 @NgModule({
   declarations: [
     TenantOptionManagementComponent,
     AddOptionModalComponent,
     ImportOptionModalComponent,
+    FileImportModalComponent,
+    ExportModalComponent,
     JsonEditorComponent,
     TemplateComponent,
     PanelWrapperComponent,

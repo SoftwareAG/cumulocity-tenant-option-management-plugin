@@ -1,0 +1,44 @@
+<c8y-modal [customFooter]="true" #modal>
+  <ng-container c8y-modal-title>
+    <h1><i class="c8y-icon c8y-icon-device"></i></h1>
+    <h3 id="modal-title">
+      {{ 'Import Tenant Option' | translate }}
+    </h3>
+  </ng-container>
+  <div class="modal-body">
+    <input type="file" (change)="onFileSelected($event)" accept="application/json" />
+
+    <c8y-data-grid
+      *ngIf="rows.length > 0"
+      [title]="'Tenant Options' | translate"
+      [columns]="columns"
+      [rows]="rows"
+      [pagination]="pagination"
+      [actionControls]="[]"
+      [displayOptions]="displayOptions"
+      [selectable]="selectable"
+      (itemsSelect)="onItemsSelect($event)"
+      (onReload)="reload()"
+    >
+    </c8y-data-grid>
+  </div>
+  <div class="modal-footer separator-top bg-level-0 sticky-bottom">
+    <button
+      title="{{ 'Cancel' | translate }}"
+      class="btn btn-default"
+      type="button"
+      (click)="close()"
+    >
+      {{ 'Cancel' | translate }}
+    </button>
+    <button
+      title="{{ 'Import' | translate }}"
+      class="btn btn-primary"
+      type="button"
+      (click)="import()"
+      [ngClass]="{ 'btn-pending': isLoading }"
+    >
+      {{ 'Import' | translate }}
+    </button>
+  </div>
+</c8y-modal>

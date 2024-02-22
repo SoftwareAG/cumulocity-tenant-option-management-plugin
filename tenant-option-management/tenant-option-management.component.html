@@ -1,24 +1,46 @@
-<c8y-title> {{ 'Tenant Option Management' | translate }} </c8y-title>
+<c8y-title> {{ 'Tenant Option Management ' | translate }} </c8y-title>
+
+<c8y-action-bar-item [placement]="'right'" [priority]="90">
+  <button
+    title="{{ 'Export' | translate }}"
+    type="button"
+    class="btn btn-link"
+    (click)="openExportModal()"
+  >
+    <i c8yIcon="download"></i> {{ 'Export' | translate }}
+  </button>
+</c8y-action-bar-item>
+
+<c8y-action-bar-item [placement]="'right'" [priority]="90">
+  <button
+    title="{{ 'Import ' | translate }}"
+    type="button"
+    class="btn btn-link"
+    (click)="openImportFromFileModal()"
+  >
+    <i c8yIcon="upload"></i> {{ 'Import' | translate }}
+  </button>
+</c8y-action-bar-item>
 
 <c8y-action-bar-item [placement]="'right'" [priority]="100">
   <button
-    title="{{ 'Import existing' | translate }}"
+    title="{{ 'Add existing' | translate }}"
     type="button"
     class="btn btn-link"
     (click)="openImportModal()"
   >
-    <i c8yIcon="upload"></i> {{ 'Import existing' | translate }}
+    <i c8yIcon="add-property"></i> {{ 'Add existing' | translate }}
   </button>
 </c8y-action-bar-item>
 
 <c8y-action-bar-item [placement]="'right'" [priority]="500">
   <button
-    title="{{ 'New tenant option' | translate }}"
+    title="{{ 'Create new' | translate }}"
     type="button"
     class="btn btn-link"
     (click)="openAddModal()"
   >
-    <i c8yIcon="plus"></i> {{ 'New tenant option' | translate }}
+    <i c8yIcon="plus"></i> {{ 'Create new' | translate }}
   </button>
 </c8y-action-bar-item>
 
